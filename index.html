@@ -5,23 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MSR Knowledge Base</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <h1>Mining Software Repositories Knowledge Base</h1>
     <p>A beginner-friendly guide to MSR data sources and research methods.</p>
 
     <nav>
-        <button>Data Sources</button>
-        <button>Collection Methods</button>
-        <button>Analysis Methods</button>
-        <button>Publication Venues</button>
+        <button onclick="showTab('sources')">Data Sources</button>
+        <button onclick="showTab('collection')">Collection Methods</button>
+        <button onclick="showTab('analysis')">Analysis Methods</button>
+        <button onclick="showTab('venues')">Publication Venues</button>
     </nav>
 
     <main>
-        <section>
+        <section id="sources" class="tab-content active">
             <h2>Data Sources</h2>
-            <p>Information about sources used in Mining Software Repositories research.</p>
+            <p>Learn about sources used in Mining Software Repositories research.</p>
+        </section>
+
+        <section id="collection" class="tab-content">
+            <h2>Collection Methods</h2>
+            <p>Learn how researchers collect software repository data.</p>
+        </section>
+
+        <section id="analysis" class="tab-content">
+            <h2>Analysis Methods</h2>
+            <p>Learn how researchers analyze collected data.</p>
+        </section>
+
+        <section id="venues" class="tab-content">
+            <h2>Publication Venues</h2>
+            <p>Explore conferences and journals related to MSR research.</p>
         </section>
     </main>
+
+    <script>
+        function showTab(tabId) {
+            const sections = document.querySelectorAll('.tab-content');
+
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+        }
+    </script>
 </body>
 </html>
