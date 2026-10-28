@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,6 +23,13 @@
         button {
             padding: 10px 15px;
             cursor: pointer;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
         }
 
         .tab-content {
@@ -33,6 +39,7 @@
         .tab-content.active {
             display: block;
         }
+        
         table {
             width: 100%;
             border-collapse: collapse;
@@ -63,13 +70,10 @@
     </nav>
 
     <main>
-        
+        <!-- DATA SOURCES TAB -->
         <section id="sources" class="tab-content active">
             <h2>Data Sources</h2>
-            <p>
-                Data sources provide information that researchers can study
-                to understand software development and software projects.
-            </p>
+            <p>Data sources provide information that researchers can study to understand software development and software projects.</p>
         
             <table>
                 <thead>
@@ -119,32 +123,38 @@
             </table>
         </section>
 
-
+        <!-- COLLECTION METHODS TAB -->
         <section id="collection" class="tab-content">
             <h2>Collection Methods</h2>
-            <p>Learn how researchers collect software repository data.</p>
+            <p>Learn how researchers collect software repository data (e.g., APIs, web scraping, repository cloning).</p>
         </section>
 
+        <!-- ANALYSIS METHODS TAB -->
         <section id="analysis" class="tab-content">
             <h2>Analysis Methods</h2>
-            <p>Learn how researchers analyze collected data.</p>
+            <p>Learn how researchers analyze collected data (e.g., repository metrics, sentiment analysis, developer social networks).</p>
         </section>
 
+        <!-- PUBLICATION VENUES TAB -->
         <section id="venues" class="tab-content">
             <h2>Publication Venues</h2>
-            <p>Explore conferences and journals related to MSR research.</p>
+            <p>Explore conferences and journals related to MSR research (e.g., MSR Conference, ICSE, ASE, EMSE).</p>
         </section>
     </main>
 
     <script>
         function showTab(tabId) {
+            // Hide all sections
             const sections = document.querySelectorAll('.tab-content');
-
             sections.forEach(function(section) {
                 section.classList.remove('active');
             });
 
-            document.getElementById(tabId).classList.add('active');
+            // Show the selected section
+            const targetSection = document.getElementById(tabId);
+            if (targetSection) {
+                targetSection.classList.add('active');
+            }
         }
     </script>
 </body>
