@@ -33,6 +33,22 @@
         .tab-content.active {
             display: block;
         }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            border: 1px solid #cccccc;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        
+        th {
+            background-color: #eeeeee;
+        }
     </style>
 </head>
 <body>
@@ -47,10 +63,62 @@
     </nav>
 
     <main>
+        
         <section id="sources" class="tab-content active">
             <h2>Data Sources</h2>
-            <p>Learn about sources used in Mining Software Repositories research.</p>
+            <p>
+                Data sources provide information that researchers can study
+                to understand software development and software projects.
+            </p>
+        
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Source</th>
+                        <th>Types of Data</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>GitHub</td>
+                        <td>Source code, commits, issues, pull requests</td>
+                        <td>A platform for hosting code and collaborating on software projects.</td>
+                    </tr>
+                    <tr>
+                        <td>Stack Overflow</td>
+                        <td>Questions, answers, comments, tags</td>
+                        <td>A question-and-answer website where developers discuss programming problems.</td>
+                    </tr>
+                    <tr>
+                        <td>JIRA</td>
+                        <td>Bug reports, tasks, issues, project updates</td>
+                        <td>A project management tool used to track software development work.</td>
+                    </tr>
+                    <tr>
+                        <td>App Stores</td>
+                        <td>App descriptions, ratings, reviews, version history</td>
+                        <td>Platforms such as Google Play and Apple's App Store that distribute applications.</td>
+                    </tr>
+                    <tr>
+                        <td>Travis CI / Jenkins</td>
+                        <td>Build logs, test results, build status</td>
+                        <td>Continuous integration tools that automate software builds and tests.</td>
+                    </tr>
+                    <tr>
+                        <td>Mailing Lists</td>
+                        <td>Messages, discussions, decisions, bug reports</td>
+                        <td>Archived email discussions that can show how developers communicate and make decisions.</td>
+                    </tr>
+                    <tr>
+                        <td>npm Registry</td>
+                        <td>Package metadata, dependencies, versions</td>
+                        <td>A registry for JavaScript packages used to study software dependencies and package development.</td>
+                    </tr>
+                </tbody>
+            </table>
         </section>
+
 
         <section id="collection" class="tab-content">
             <h2>Collection Methods</h2>
